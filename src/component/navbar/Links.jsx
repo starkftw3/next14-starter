@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Links = () => {
   const links = [
     {
@@ -18,11 +20,13 @@ const Links = () => {
     },
   ];
   return (
-    <div>
+    <div className="flex flex-row gap-11">
       {links.map((link) => (
-        <a href={link.path} key={link.title}>
-          {link.title}
-        </a>
+        <Link href={link.path} key={link.title}>
+          <div className="text-base text-black-950 hover:bg-blue-700 active:bg-blue-700">
+            {link.title}
+          </div>
+        </Link>
       ))}
     </div>
   );
